@@ -14,7 +14,7 @@ kubectl apply -f - <<EOF
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
-  name: linkerd-catalog-repo
+  name: linkerd-demo-catalog-repo
   namespace: kommander
   labels:
     kommander.d2iq.io/gitapps-gitrepository-type: catalog
