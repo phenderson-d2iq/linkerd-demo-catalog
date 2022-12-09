@@ -1,0 +1,9 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: linkerd-helm-repo
+  namespace: kommander-flux
+spec:
+  interval: 2m0s
+  url: https://helm.linkerd.io/stable

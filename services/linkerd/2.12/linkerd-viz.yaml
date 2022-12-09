@@ -1,0 +1,30 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: linkerd-viz
+  namespace: ${releaseNamespace}
+spec:
+  chart:
+    spec:
+      chart: linkerd-viz
+      sourceRef:
+        kind: HelmRepository
+        name: linkerd-helm-repo
+        namespace: kommander-flux
+      version: 30.3.4
+  dependsOn:
+    - name: linkerd-control-plane
+  interval: 15s
+  install:
+    remediation:
+      retries: 30
+    createNamespace: true
+  upgrade:
+    remediation:
+      retries: 30
+  releaseName: linkerd-viz
+  valuesFrom:
+    - kind: ConfigMap
+      name: linkerd-viz-2.12-defaults
+  targetNamespace: linkerd-viz
