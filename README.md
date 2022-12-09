@@ -1,4 +1,4 @@
-# linkerd-catalog
+# linkerd-demo-catalog
 ## This is a custom catalog for Linkerd for Kommander
 
 ![Linkerd DEMO Catalog](./image.png)
@@ -24,7 +24,7 @@ spec:
   ref:
     branch: main
   timeout: 20s
-  url: https://github.com/phenderson-d2iq/linkerd-catalog
+  url: https://github.com/phenderson-d2iq/linkerd-demo-catalog
 EOF
 ```
 
